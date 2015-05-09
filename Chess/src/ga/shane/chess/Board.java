@@ -404,37 +404,37 @@ public class Board extends JPanel {
 		for(Side side : Side.values()) {
 			//Bishops
 			for(int[] pos : Bishop.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new Bishop(side).setSpace(spaces[x][y]);
 			}
 			
 			//Kings
 			for(int[] pos : King.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new King(side).setSpace(spaces[x][y]);
 			}
 			
 			//Knights
 			for(int[] pos : Knight.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new Knight(side).setSpace(spaces[x][y]);
 			}
 			
 			//Pawns
 			for(int[] pos : Pawn.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new Pawn(side).setSpace(spaces[x][y]);
 			}
 			
 			//Queens
 			for(int[] pos : Queen.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new Queen(side).setSpace(spaces[x][y]);
 			}
 			
 			//Rooks
 			for(int[] pos : Rook.DEFAULT_POSITIONS) {
-				int x = pos[0], y = side.translate(y = pos[1]);
+				int x = pos[0], y = side.translate(pos[1]);
 				spaces[x][y].piece = new Rook(side).setSpace(spaces[x][y]);
 			}
 		}
