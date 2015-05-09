@@ -19,4 +19,12 @@ public class Knight extends Piece {
 		
 		return ((sy == cy + 2 || sy == cy - 2) && (sx == cx - 1 || sx == cx + 1)) || ((sx == cx - 2 || sx == cx + 2) && (sy == cy + 1 || sy == cy - 1));
 	}
+	
+	public final static int[][] DEFAULT_POSITIONS = {
+		{
+			2, 1
+		}, {
+			7, 1
+		}
+	};
 }

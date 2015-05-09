@@ -16,4 +16,10 @@ public class Queen extends Piece {
 	public boolean isLegal(BoardSpace space) {		
 		return new Rook(side).setSpace(getSpace()).isLegal(space) || new Bishop(side).setSpace(getSpace()).isLegal(space);
 	}
+	
+	public final static int[][] DEFAULT_POSITIONS = {
+		{
+			4, 1
+		}
+	};
 }

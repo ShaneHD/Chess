@@ -14,17 +14,11 @@ public abstract class Piece {
 	private final BufferedImage image;
 	private BoardSpace space; 
 	private final static BufferedImage set = ImageUtils.load(FileUtils.newFile("res/pieces.png"));
-	public final int[][] legalMoves;
 	public final Side side;
 	
-	public Piece(Side side, int fromX, int[][] legalMoves) {
-		this.side = side;
-		this.legalMoves = legalMoves;
-		image = set.getSubimage(64 * (fromX - 1), side.spritesheetY, 64, 64);
-	}
-	
 	public Piece(Side side, int fromX) {
-		this(side, fromX, new int[][]{});
+		this.side = side;
+		image = set.getSubimage(64 * (fromX - 1), side.spritesheetY, 64, 64);
 	}
 	
 	public Piece setSpace(BoardSpace space) {

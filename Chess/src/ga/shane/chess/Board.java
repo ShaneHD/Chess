@@ -364,6 +364,13 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess;
 
+import ga.shane.chess.pieces.Bishop;
+import ga.shane.chess.pieces.King;
+import ga.shane.chess.pieces.Knight;
+import ga.shane.chess.pieces.Pawn;
+import ga.shane.chess.pieces.Queen;
+import ga.shane.chess.pieces.Rook;
+
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
@@ -372,6 +379,8 @@ import javax.swing.JPanel;
  * @author http://www.shane.ga
  */
 public class Board extends JPanel {
+	private final BoardSpace[][] spaces = new BoardSpace[9][9];
+	
 	public Board() {
 		setLayout(new GridLayout(8, 8));
 		
@@ -384,8 +393,49 @@ public class Board extends JPanel {
 					tick = y - $wag;
 				}
 				
+				BoardSpace space;
 //				+1 so that its coords are 1 to 8
-				add(new BoardSpace(tick++, y + 1, x + 1));
+				add(space = new BoardSpace(tick++, y + 1, x + 1));
+				spaces[y + 1][x + 1] = space;
+			}
+		}
+		
+		//TODO figure out a way of storing and accessing default pos without having static vars per class...
+		for(Side side : Side.values()) {
+			//Bishops
+			for(int[] pos : Bishop.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new Bishop(side).setSpace(spaces[x][y]);
+			}
+			
+			//Kings
+			for(int[] pos : King.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new King(side).setSpace(spaces[x][y]);
+			}
+			
+			//Knights
+			for(int[] pos : Knight.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new Knight(side).setSpace(spaces[x][y]);
+			}
+			
+			//Pawns
+			for(int[] pos : Pawn.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new Pawn(side).setSpace(spaces[x][y]);
+			}
+			
+			//Queens
+			for(int[] pos : Queen.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new Queen(side).setSpace(spaces[x][y]);
+			}
+			
+			//Rooks
+			for(int[] pos : Rook.DEFAULT_POSITIONS) {
+				int x = pos[0], y = side.translate(y = pos[1]);
+				spaces[x][y].piece = new Rook(side).setSpace(spaces[x][y]);
 			}
 		}
 	}

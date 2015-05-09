@@ -19,4 +19,10 @@ public class King extends Piece {
 		
 		return (sx == cx - 1 && sy == cy) || (sx == cx + 1 && sy == cy) || (sy == cy + 1 && sx == cx) || (sy == cy - 1 && sx == cx);
 	}
+	
+	public final static int[][] DEFAULT_POSITIONS =  {
+		{
+			5, 1
+		}
+	};
 }

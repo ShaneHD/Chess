@@ -24,4 +24,12 @@ public class Bishop extends Piece {
 		
 		return false;
 	}
+	
+	public final static int[][] DEFAULT_POSITIONS = {
+		{
+			3, 1
+		}, {
+			6, 1
+		}
+	};
 }

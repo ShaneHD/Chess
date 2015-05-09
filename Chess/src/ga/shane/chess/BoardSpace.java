@@ -364,8 +364,6 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess;
 
-import ga.shane.chess.pieces.*;
-
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -378,18 +376,11 @@ public class BoardSpace extends JPanel {
 	//public final static int SIZE = 64;
 	public final int x, y;
 	public Piece piece;
-	public static BoardSpace pieceSpace;
 	
 	public BoardSpace(int color, int x, int y) {
 		this.x = x;
 		this.y = y;
-		
-		if(x == 5 && y == 3) {
-			piece = new Queen(Side.turn);
-			piece.setSpace(this);
-			pieceSpace = this;
-		}
-			
+
 		setBackground(color % 2 == 0 ? Color.black : Color.white);
 	}
 		
@@ -397,16 +388,8 @@ public class BoardSpace extends JPanel {
 	public void paint(Graphics g) {
 		super.paint(g);
 		
-		if(piece != null) {
+		if(piece != null)
 			piece.draw(g);
-		}
-		
-		if(this != pieceSpace) {
-			Piece piece = pieceSpace.piece;
-			
-			if(piece.isLegal(this))
-				setBackground(Color.red);
-		}
 		
 		repaint();
 	}

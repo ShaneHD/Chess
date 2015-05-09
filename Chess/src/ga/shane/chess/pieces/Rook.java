@@ -19,4 +19,12 @@ public class Rook extends Piece {
 		
 		return cx == sx || cy == sy;
 	}
+	
+	public final static int[][] DEFAULT_POSITIONS = {
+		{
+			1, 1
+		}, {
+			8, 1
+		}
+	};
 }

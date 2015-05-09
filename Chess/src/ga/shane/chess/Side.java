@@ -19,4 +19,8 @@ public enum Side {
 	public int parse(int i) {
 		return this == GOLD ? -i : i;
 	}
+	
+	public int translate(int pos) {
+		return this == GOLD ? pos : 9 - pos;
+	}
 }
