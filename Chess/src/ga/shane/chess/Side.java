@@ -1,0 +1,18 @@
+package ga.shane.chess;
+
+import ga.shane.utilities.BRandom;
+
+/** 
+ * @author http://www.shane.ga
+ */
+public enum Side {
+	GOLD(0), 
+	SILVER(64);
+	
+	public static Side turn = new BRandom().nextBoolean() ? GOLD : SILVER;
+	public final int spritesheetY;
+	
+	Side(int spritesheetY) {
+		this.spritesheetY = spritesheetY;
+	}
+}
