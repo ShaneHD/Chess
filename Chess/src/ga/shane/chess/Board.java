@@ -385,7 +385,7 @@ public class Board extends JPanel {
 				}
 				
 //				+1 so that its coords are 1 to 8
-				add(new BoardSpace(tick++, x + 1, y + 1));
+				add(new BoardSpace(tick++, y + 1, x + 1));
 			}
 		}
 	}

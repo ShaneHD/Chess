@@ -378,7 +378,7 @@ public class Window extends JFrame {
 		
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize((BoardSpace.SIZE * 8) * 2, (BoardSpace.SIZE * 8) * 2);
+		setSize(650, 650);
 		setLocationRelativeTo(null);
 		setVisible(true);	
 	}

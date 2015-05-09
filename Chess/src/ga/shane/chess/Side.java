@@ -15,4 +15,8 @@ public enum Side {
 	Side(int spritesheetY) {
 		this.spritesheetY = spritesheetY;
 	}
+	
+	public int parse(int i) {
+		return this == GOLD ? -i : i;
+	}
 }
