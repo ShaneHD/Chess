@@ -364,7 +364,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 
 
-import ga.shane.chess.Window;
+import ga.shane.chess.gui.Window;
 
 /** 
  * @author http://www.shane.ga

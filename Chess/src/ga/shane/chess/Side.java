@@ -1,5 +1,7 @@
 package ga.shane.chess;
 
+import javax.swing.JList;
+
 
 /** 
  * @author http://www.shane.ga
@@ -10,6 +12,8 @@ public enum Side {
 	
 	public static Side turn = SILVER;//new BRandom().nextBoolean() ? GOLD : SILVER;
 	public final int spritesheetY;
+	public final JList<Piece> taken = new JList<Piece>();
+	//public final ArrayList<Piece> taken = new ArrayList<Piece>();
 	
 	Side(int spritesheetY) {
 		this.spritesheetY = spritesheetY;

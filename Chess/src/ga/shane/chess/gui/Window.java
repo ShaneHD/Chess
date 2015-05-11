@@ -362,7 +362,13 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
       With Secondary Licenses", as defined by
       the Mozilla Public License, v. 2.0.
  */
-package ga.shane.chess;
+package ga.shane.chess.gui;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import ga.shane.chess.Board;
+import ga.shane.chess.Side;
 
 import javax.swing.JFrame;
 
@@ -373,13 +379,19 @@ public class Window extends JFrame {
 	public Window() {	
 		super("Chess");
 		
+		setLayout(new BorderLayout());
+		
+		add(new TakenPieces(Side.GOLD), BorderLayout.NORTH);
+		
 		Board board = new Board();
 		add(board);
+		
+		add(new TakenPieces(Side.SILVER), BorderLayout.SOUTH);
 		
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(650, 650);
 		setLocationRelativeTo(null);
-		setVisible(true);	
+		setVisible(true);
 	}
 }

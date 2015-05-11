@@ -63,7 +63,7 @@ public class Pawn extends Piece {
 			int sx = moves[i][0], sy = moves[i][1];
 			BoardSpace space = Board.spaces[sx][sy];
 			
-			if(!space.containsEnemy())
+			if(space == null || !space.containsEnemy())
 				moves[i] = MoveTrain.INVALID;
 		}
 		
