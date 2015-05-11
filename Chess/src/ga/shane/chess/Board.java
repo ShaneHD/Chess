@@ -379,7 +379,7 @@ import javax.swing.JPanel;
  * @author http://www.shane.ga
  */
 public class Board extends JPanel {
-	private final BoardSpace[][] spaces = new BoardSpace[9][9];
+	public static final BoardSpace[][] spaces = new BoardSpace[9][9];
 	
 	public Board() {
 		setLayout(new GridLayout(8, 8));

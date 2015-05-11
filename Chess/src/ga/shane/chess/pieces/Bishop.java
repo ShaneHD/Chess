@@ -1,8 +1,10 @@
 package ga.shane.chess.pieces;
 
-import ga.shane.chess.BoardSpace;
+import ga.shane.chess.MoveTrain;
 import ga.shane.chess.Piece;
 import ga.shane.chess.Side;
+
+import java.util.List;
 
 /** 
  * @author http://www.shane.ga
@@ -10,19 +12,6 @@ import ga.shane.chess.Side;
 public class Bishop extends Piece {
 	public Bishop(Side side) {
 		super(side, 5);
-	}
-
-	@Override
-	public boolean isLegal(BoardSpace space) {
-		int sx = space.x, sy = space.y;
-		int cx = getSpace().x, cy = getSpace().y;
-		
-		for(int i = 0; i < 8; i++) {
-			if((sx == cx - i && sy == cy + i) || (sx == cx + i && sy == cy - i) || (sx == cx - i && sy == cy - i) || (sx == cx + i && sy == cy + i))
-				return true;
-		}
-		
-		return false;
 	}
 	
 	public final static int[][] DEFAULT_POSITIONS = {
@@ -32,4 +21,36 @@ public class Bishop extends Piece {
 			6, 1
 		}
 	};
+	
+	@Override
+	public List<MoveTrain> createTrains() {
+		MoveTrain ne = new MoveTrain(), nw = new MoveTrain(), se = new MoveTrain(), sw = new MoveTrain();
+		int cx = getSpace().x, cy = getSpace().y;
+		
+		int y = cy - 1;
+		for(int x = cx + 1; x <= 8; x++) {
+			ne.add(x, y);
+			y--;
+		}
+		
+		y = cy - 1;
+		for(int x = cx - 1; x >= 1; x--) {
+			nw.add(x, y);
+			y--;
+		}
+		
+		y = cy + 1;
+		for(int x = cx + 1; x <= 8; x++) {
+			se.add(x, y);
+			y++;
+		}
+		
+		y = cy + 1;
+		for(int x = cx - 1; x >= 1; x--) {
+			sw.add(x, y);
+			y++;
+		}
+		
+		return MoveTrain.compile(ne, nw, se, sw);
+	}
 }

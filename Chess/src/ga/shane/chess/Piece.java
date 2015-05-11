@@ -6,6 +6,7 @@ import ga.shane.utilities.Math;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.List;
 
 /** 
  * @author http://www.shane.ga
@@ -30,7 +31,7 @@ public abstract class Piece {
 		return space;
 	}
 	
-	public abstract boolean isLegal(BoardSpace space);
+	public abstract List<MoveTrain> createTrains();
 	
 	public void draw(Graphics g) {
 		if(space == null)

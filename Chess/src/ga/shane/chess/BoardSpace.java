@@ -366,24 +366,48 @@ package ga.shane.chess;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
 /** 
  * @author http://www.shane.ga
  */
-public class BoardSpace extends JPanel {
+public class BoardSpace extends JPanel implements MouseListener {
 	//public final static int SIZE = 64;
 	public final int x, y;
 	public Piece piece;
+	private final static boolean SHOW_COORDINATES = true;
 	
 	public BoardSpace(int color, int x, int y) {
 		this.x = x;
 		this.y = y;
 
+		addMouseListener(this);
 		setBackground(color % 2 == 0 ? Color.black : Color.white);
 	}
 		
+	public boolean containsEnemy() {
+		return piece == null ? false : piece.side.equals(Side.turn.opposite());
+	}
+	
+	public BoardSpace left() {
+		return x == 1 ? null : Board.spaces[x - 1][y];
+	}
+
+	public BoardSpace right() {
+		return x == 8 ? null : Board.spaces[x + 1][y];
+	}
+	
+	public BoardSpace up() {
+		return y == 1 ? null : Board.spaces[x][y - 1];
+	}
+	
+	public BoardSpace down() {
+		return y == 8 ? null : Board.spaces[x][y + 1];
+	}
+	
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -391,6 +415,36 @@ public class BoardSpace extends JPanel {
 		if(piece != null)
 			piece.draw(g);
 		
+		if(SHOW_COORDINATES) {
+			Color old = g.getColor();
+			g.setColor(Color.pink);
+			g.drawString(x + ", " + y, x, y + 12);
+			g.setColor(old);
+		}
+		
 		repaint();
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(e.getSource() == this) {
+			Player.click(this);
+		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
 	}
 }
