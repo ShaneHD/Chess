@@ -1,5 +1,7 @@
 package ga.shane.chess;
 
+import ga.shane.chess.gui.Board;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

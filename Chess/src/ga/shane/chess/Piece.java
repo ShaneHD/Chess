@@ -12,13 +12,14 @@ import java.util.List;
  * @author http://www.shane.ga
  */
 public abstract class Piece {
-	private final BufferedImage image;
+	public final BufferedImage image;
 	private BoardSpace space; 
 	private final static BufferedImage set = ImageUtils.load(FileUtils.newFile("res/pieces.png"));
 	public final Side side;
 	
 	public Piece(Side side, int fromX) {
 		this.side = side;
+		
 		image = set.getSubimage(64 * (fromX - 1), side.spritesheetY, 64, 64);
 	}
 	

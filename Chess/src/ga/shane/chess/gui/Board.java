@@ -362,8 +362,10 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
       With Secondary Licenses", as defined by
       the Mozilla Public License, v. 2.0.
  */
-package ga.shane.chess;
+package ga.shane.chess.gui;
 
+import ga.shane.chess.BoardSpace;
+import ga.shane.chess.Side;
 import ga.shane.chess.pieces.Bishop;
 import ga.shane.chess.pieces.King;
 import ga.shane.chess.pieces.Knight;
@@ -438,5 +440,9 @@ public class Board extends JPanel {
 				spaces[x][y].piece = new Rook(side).setSpace(spaces[x][y]);
 			}
 		}
+		
+		Side.GOLD.taken.add(spaces[1][8].piece);
+		Side.GOLD.taken.add(spaces[3][8].piece);
+		Side.GOLD.taken.add(spaces[5][8].piece);
 	}
 }

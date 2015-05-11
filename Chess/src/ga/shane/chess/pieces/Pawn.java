@@ -1,10 +1,10 @@
 package ga.shane.chess.pieces;
 
-import ga.shane.chess.Board;
 import ga.shane.chess.BoardSpace;
 import ga.shane.chess.MoveTrain;
 import ga.shane.chess.Piece;
 import ga.shane.chess.Side;
+import ga.shane.chess.gui.Board;
 
 import java.util.List;
 

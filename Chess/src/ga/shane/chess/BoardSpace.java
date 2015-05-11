@@ -364,6 +364,8 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess;
 
+import ga.shane.chess.gui.Board;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
