@@ -377,12 +377,12 @@ public class Window extends JFrame {
 	public Window() {	
 		super("Chess");
 		
-		add(new TakenPieces(Side.GOLD), BorderLayout.PAGE_START);
+		add(new TakenPieces(Side.GOLD), BorderLayout.NORTH);
 		
 		Board board = new Board();
 		add(board, BorderLayout.CENTER);
 		
-		add(new TakenPieces(Side.SILVER), BorderLayout.PAGE_END);
+		add(new TakenPieces(Side.SILVER), BorderLayout.SOUTH);
 		
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

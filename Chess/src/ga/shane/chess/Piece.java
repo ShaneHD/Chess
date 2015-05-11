@@ -25,6 +25,10 @@ public abstract class Piece {
 	
 	public Piece setSpace(BoardSpace space) {
 		this.space = space;
+		
+		if(space != null)
+			space.piece = this;
+		
 		return this;
 	}
 	

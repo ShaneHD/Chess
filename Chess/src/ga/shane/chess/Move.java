@@ -40,12 +40,23 @@ public class Move {
 		}
 	}
 	
-	//TODO move path per piece.
-	//It will be like a train, 1 move -> next, etc. in order
-	//Then you can cancel the rest of the train once you find a collision
-	//Multiple trains for one move
+	public boolean contains(BoardSpace space) {
+		for(MoveTrain train : trains) {
+			if(train.contains(space))
+				return true;
+		}
+		
+		return false;
+	}
 	
 	public void to(BoardSpace space) {
+		if(space.containsEnemy()) {
+			Piece piece = space.piece;
+			Side.turn.taken.add(piece.setSpace(null));
+		}
 		
+		piece.getSpace().piece = null;
+		piece.setSpace(space);
+		Side.turn = Side.turn.opposite();
 	}
 }
