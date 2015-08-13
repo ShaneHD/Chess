@@ -374,6 +374,7 @@ public enum Side {
 	GOLD(0), 
 	SILVER(64);
 	
+	public static Side only = null;
 	public static Side turn = SILVER;//new BRandom().nextBoolean() ? GOLD : SILVER;
 	public final int spritesheetY;
 	public final ArrayList<Piece> taken = new ArrayList<Piece>();

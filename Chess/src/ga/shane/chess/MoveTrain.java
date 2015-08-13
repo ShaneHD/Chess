@@ -364,11 +364,11 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess;
 
-import ga.shane.chess.gui.Board;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import ga.shane.chess.gui.Board;
 
 /** 
  * @author http://www.shane.ga
@@ -412,6 +412,33 @@ public class MoveTrain extends ArrayList<BoardSpace> {
 			return false;
 		
 		return super.add(Board.spaces[x][y]);
+	}
+	
+	public String toStr() {
+		String str = "";
+		
+		for(BoardSpace space : this)
+			str+= space.x + "," + space.y;
+	
+		return str;
+	}
+	
+	public static MoveTrain fromStr(String str) {
+		MoveTrain train = new MoveTrain();
+		String[] split = str.split(",");
+		
+		int x = 0, y = 0;
+		
+		for(int i = 0; i < split.length; i++) {
+			if(i % 2 == 0)
+				x = Integer.parseInt(split[i]);
+			else {
+				y = Integer.parseInt(split[i]);
+				train.add(Board.spaces[x][y]);
+			}
+		}
+		
+		return train;
 	}
 	
 	public static List<MoveTrain> compile(int[][] moves) {

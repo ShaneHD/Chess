@@ -364,7 +364,10 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess.gui;
 
+import ga.shane.chess.BoardSpace;
+import ga.shane.chess.Player;
 import ga.shane.chess.Side;
+import ga.shane.chess.multiplayer.gui.Board;
 
 import java.awt.BorderLayout;
 
@@ -374,13 +377,19 @@ import javax.swing.JFrame;
  * @author http://www.shane.ga
  */
 public class Window extends JFrame {
-	public Window() {	
-		super("Chess");
+	protected Board board;
+	
+	public Window() {
+		this(new Board(), new Player());
+	}
+	
+	public Window(Board board, Player player) {	
+		super("Chess" + (Side.only != null ? " [" + Side.only + "]" : ""));
 		
+		BoardSpace.player = player;
 		add(new TakenPieces(Side.GOLD), BorderLayout.NORTH);
 		
-		Board board = new Board();
-		add(board, BorderLayout.CENTER);
+		add(this.board = board, BorderLayout.CENTER);
 		
 		add(new TakenPieces(Side.SILVER), BorderLayout.SOUTH);
 		

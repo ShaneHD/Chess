@@ -382,6 +382,7 @@ public class BoardSpace extends JPanel implements MouseListener {
 	public Piece piece;
 	private final static boolean SHOW_COORDINATES = true;
 	public final Color defaultColor;
+	public static Player player;
 	
 	public BoardSpace(int color, int x, int y) {
 		this.x = x;
@@ -390,7 +391,7 @@ public class BoardSpace extends JPanel implements MouseListener {
 		addMouseListener(this);
 		setBackground(defaultColor = color % 2 == 0 ? Color.black : Color.white);
 	}
-		
+
 	public boolean containsEnemy() {
 		return piece == null ? false : piece.side.equals(Side.turn.opposite());
 	}
@@ -431,7 +432,7 @@ public class BoardSpace extends JPanel implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if(e.getSource() == this) {
-			Player.click(this, e.getButton());
+			player.click(this, e.getButton());
 		}
 	}
 
