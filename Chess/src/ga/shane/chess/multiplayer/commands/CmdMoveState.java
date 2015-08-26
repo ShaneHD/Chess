@@ -24,7 +24,7 @@ public class CmdMoveState implements Command {
 			if(args.length < 5)
 				return;
 			
-			MoveTrain train = MoveTrain.fromStr(args[4]);
+			MoveTrain train = MoveTrain.fromString(args[4]);
 			Player.highlightMove(train);
 		} else {
 			Player.unhighlightMove();
