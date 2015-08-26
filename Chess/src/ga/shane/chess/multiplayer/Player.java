@@ -17,7 +17,7 @@ public class Player extends ga.shane.chess.Player {
 	protected void onPickup(BoardSpace space, MoveTrain... trains) {
 		try {
 			for(MoveTrain train : trains) {
-				Net.instance.write("move", "true", "" + space.x, "" + space.y, train.toStr());
+				Net.instance.write("movestate", "true", "" + space.x, "" + space.y, train.toStr());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -27,7 +27,7 @@ public class Player extends ga.shane.chess.Player {
 	@Override
 	protected void onPutdown() {
 		try {
-			Net.instance.write("move", "false");
+			Net.instance.write("movestate", "false");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	

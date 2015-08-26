@@ -388,10 +388,14 @@ public class Queen extends Piece {
 
 	@Override
 	public List<MoveTrain> createTrains() {
+		BoardSpace space = getSpace();
+		
 		ArrayList<MoveTrain> trains = new ArrayList<MoveTrain>();
 		trains.addAll(new Rook(side).setSpace(getSpace()).createTrains());
 		trains.addAll(new Bishop(side).setSpace(getSpace()).createTrains());
-	
+		
+		setSpace(space);
+		
 		return trains;
 	}
 }

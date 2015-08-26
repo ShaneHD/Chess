@@ -378,13 +378,18 @@ import javax.swing.JFrame;
  */
 public class Window extends JFrame {
 	protected Board board;
+	private static String title;
+	private static Window instance;
 	
 	public Window() {
 		this(new Board(), new Player());
 	}
 	
 	public Window(Board board, Player player) {	
-		super("Chess" + (Side.only != null ? " [" + Side.only + "]" : ""));
+		super(title = "Chess" + (Side.only != null ? " [" + Side.only + "]" : ""));
+		
+		instance = this;
+		updateTitle(Side.turn);
 		
 		BoardSpace.player = player;
 		add(new TakenPieces(Side.GOLD), BorderLayout.NORTH);
@@ -398,5 +403,9 @@ public class Window extends JFrame {
 		setSize(650, 650);
 		setLocationRelativeTo(null);
 		setVisible(true);
+	}
+	
+	public static void updateTitle(Side side) {
+		instance.setTitle(title + " - " + side + "'s turn");
 	}
 }

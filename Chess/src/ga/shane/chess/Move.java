@@ -366,6 +366,8 @@ package ga.shane.chess;
 
 import java.util.List;
 
+import ga.shane.chess.gui.Window;
+
 /** 
  * @author http://www.shane.ga
  */
@@ -422,5 +424,6 @@ public class Move {
 		piece.getSpace().piece = null;
 		piece.setSpace(space);
 		Side.turn = Side.turn.opposite();
+		Window.updateTitle(Side.turn);
 	}
 }

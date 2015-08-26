@@ -379,15 +379,11 @@ public class Pawn extends Piece {
 	public Pawn(Side side) {
 		super(side, 6);
 	}
-
-	private int allowedSteps() {
-		return getSpace().y == side.line2Y() ? 2 : 1;
-	}
 	
 	public final static int[][] DEFAULT_POSITIONS =  {
 		{
 			1, 2
-		},/* {
+		}, {
 			2, 2
 		}, {
 			3, 2
@@ -401,7 +397,7 @@ public class Pawn extends Piece {
 			7, 2
 		}, {
 			8, 2
-		}*/
+		}
 	};
 
 	@Override
@@ -420,11 +416,18 @@ public class Pawn extends Piece {
 			}
 		};
 		
-		if(allowedSteps() == 1)
-			moves[1] = MoveTrain.INVALID;
+		if(Board.spaces[x][y - side.parse(1)].piece != null)
+			moves[0] = MoveTrain.INVALID;
 		
-		for(int i = 2; i <= 3; i++) {
+		if(!(getSpace().y == side.line2Y()))
+			moves[1] = MoveTrain.INVALID;
+			
+		for(int i = 2; i <= 3; i++) {	
+			if((x == 0 && i == 3) || (x == 8 && i == 2))
+				continue;
+			
 			int sx = moves[i][0], sy = moves[i][1];
+			
 			BoardSpace space = Board.spaces[sx][sy];
 			
 			if(space == null || !space.containsEnemy())

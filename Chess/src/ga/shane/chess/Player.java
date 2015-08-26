@@ -418,6 +418,7 @@ public class Player {
 				onPickup(space, train);
 				highlightMove(train);
 			}
+			
 		} else if(selectedPiece != null && move.contains(space)) {
 			onMove(selectedPiece.getSpace(), space);
 			move.to(space);

@@ -2,7 +2,6 @@ package ga.shane.chess.multiplayer;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -36,11 +35,11 @@ public class MultiplayerGameServer {
 				 
 				 Side.only = side;
 				 net = new Net(in, out);
+				 net.write("initside", Side.turn.toString());
 			} while(net == null);
 			
-			System.out.println("GOT, OPEN WOINDOW");
 			new Window();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

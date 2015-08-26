@@ -414,15 +414,21 @@ public class MoveTrain extends ArrayList<BoardSpace> {
 		return super.add(Board.spaces[x][y]);
 	}
 	
+	/**
+	 * Converts this into {@link String} format<br>
+	 */
 	public String toStr() {
 		String str = "";
 		
 		for(BoardSpace space : this)
-			str+= space.x + "," + space.y;
+			str+= "," + space.x + "," + space.y;
 	
-		return str;
+		return str.replaceFirst(",", "");
 	}
 	
+	/**
+	 * Converts {@link String} in {@link #toStr()} format to a {@link MoveTrain} instance
+	 */
 	public static MoveTrain fromStr(String str) {
 		MoveTrain train = new MoveTrain();
 		String[] split = str.split(",");

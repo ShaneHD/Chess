@@ -23,13 +23,13 @@ public class MultiplayerGameClient {
 			DataInputStream in = new DataInputStream(server.getInputStream());
 			DataOutputStream out = new DataOutputStream(server.getOutputStream());
 			
-			out.writeUTF(password);
 			Side.only = side;
 			Net net = new Net(in, out);
-		
+			net.write(password);
+			
 			new Window();
 		} catch(Exception e) {	
-			PCUtils.globalMessagebox("Can't connect to server, closing", "Error", JOptionPane.ERROR);
+			PCUtils.globalMessagebox("Can't connect to server, closing", "Error", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
 	}

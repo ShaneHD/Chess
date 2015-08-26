@@ -366,6 +366,8 @@ package ga.shane.chess;
 
 import java.util.ArrayList;
 
+import ga.shane.utilities.BRandom;
+
 
 /** 
  * @author http://www.shane.ga
@@ -375,7 +377,8 @@ public enum Side {
 	SILVER(64);
 	
 	public static Side only = null;
-	public static Side turn = SILVER;//new BRandom().nextBoolean() ? GOLD : SILVER;
+	public static Side turn = new BRandom().nextBoolean() ? GOLD : SILVER;
+	
 	public final int spritesheetY;
 	public final ArrayList<Piece> taken = new ArrayList<Piece>();
 	
