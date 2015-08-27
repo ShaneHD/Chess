@@ -364,13 +364,13 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess;
 
-import ga.shane.utilities.FileUtils;
-import ga.shane.utilities.ImageUtils;
-import ga.shane.utilities.Math;
-
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.List;
+
+import ga.shane.utilities.EMath;
+import ga.shane.utilities.FileUtils;
+import ga.shane.utilities.ImageUtils;
 
 /** 
  * @author http://www.shane.ga
@@ -407,6 +407,6 @@ public abstract class Piece {
 			return;
 		
 		//TODO figure out how to get width/height of a square..
-		g.drawImage(image, Math.center(space.x, 22), Math.center(space.y, 22), null);
+		g.drawImage(image, EMath.center(space.x, 22), EMath.center(space.y, 22), null);
 	}
 }
