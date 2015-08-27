@@ -425,7 +425,7 @@ public class MoveTrain extends ArrayList<BoardSpace> {
 	}
 	
 	/**
-	 * Converts {@link String} in {@link #toStr()} format to a {@link MoveTrain} instance
+	 * Converts {@link String} in {@link #toString()} format to a {@link MoveTrain} instance
 	 */
 	public static MoveTrain fromString(String str) {
 		MoveTrain train = new MoveTrain();
