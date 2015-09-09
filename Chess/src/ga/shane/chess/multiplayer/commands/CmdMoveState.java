@@ -365,8 +365,8 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 package ga.shane.chess.multiplayer.commands;
 
 import ga.shane.chess.MoveTrain;
+import ga.shane.chess.gui.BoardSpace;
 import ga.shane.chess.multiplayer.Player;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
 import ga.shane.chess.multiplayer.gui.Window;
 import ga.shane.utilities.net.Command;
 import ga.shane.utilities.net.NetworkHelper;

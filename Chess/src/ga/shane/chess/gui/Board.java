@@ -365,7 +365,6 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 package ga.shane.chess.gui;
 
 import ga.shane.chess.Side;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
 import ga.shane.chess.pieces.Bishop;
 import ga.shane.chess.pieces.King;
 import ga.shane.chess.pieces.Knight;

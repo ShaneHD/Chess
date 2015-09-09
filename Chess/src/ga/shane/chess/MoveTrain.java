@@ -369,7 +369,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import ga.shane.chess.gui.Board;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
+import ga.shane.chess.gui.BoardSpace;
 
 /** 
  * @author http://www.shane.ga

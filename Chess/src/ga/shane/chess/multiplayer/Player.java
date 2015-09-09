@@ -365,7 +365,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 package ga.shane.chess.multiplayer;
 
 import ga.shane.chess.MoveTrain;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
+import ga.shane.chess.gui.BoardSpace;
 
 public class Player extends ga.shane.chess.Player {
 	@Override

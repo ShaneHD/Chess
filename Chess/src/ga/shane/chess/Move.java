@@ -366,8 +366,8 @@ package ga.shane.chess;
 
 import java.util.List;
 
+import ga.shane.chess.gui.BoardSpace;
 import ga.shane.chess.gui.Window;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
 
 /** 
  * @author http://www.shane.ga

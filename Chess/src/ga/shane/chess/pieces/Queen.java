@@ -370,7 +370,7 @@ import java.util.List;
 import ga.shane.chess.MoveTrain;
 import ga.shane.chess.Piece;
 import ga.shane.chess.Side;
-import ga.shane.chess.multiplayer.gui.BoardSpace;
+import ga.shane.chess.gui.BoardSpace;
 
 /** 
  * @author http://www.shane.ga
