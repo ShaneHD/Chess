@@ -425,12 +425,9 @@ public class Move {
 		piece.getSpace().piece = null;
 		piece.setSpace(space);
 
-		System.out.print(Side.turn + ": PAUSED	");
 		Side.turn.timer.setPaused(true);
 		Side.turn = Side.turn.opposite();
-		System.out.print(Side.turn + ": unpaused");
 		Side.turn.timer.setPaused(false);
-		System.out.println();
 		
 		Window.updateTitle(Side.turn);
 	}
