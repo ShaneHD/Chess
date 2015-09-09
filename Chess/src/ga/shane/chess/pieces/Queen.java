@@ -367,10 +367,10 @@ package ga.shane.chess.pieces;
 import java.util.ArrayList;
 import java.util.List;
 
-import ga.shane.chess.BoardSpace;
 import ga.shane.chess.MoveTrain;
 import ga.shane.chess.Piece;
 import ga.shane.chess.Side;
+import ga.shane.chess.multiplayer.gui.BoardSpace;
 
 /** 
  * @author http://www.shane.ga

@@ -364,10 +364,10 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
  */
 package ga.shane.chess.gui;
 
-import ga.shane.chess.BoardSpace;
 import ga.shane.chess.Player;
 import ga.shane.chess.Side;
 import ga.shane.chess.multiplayer.gui.Board;
+import ga.shane.chess.multiplayer.gui.BoardSpace;
 
 import java.awt.BorderLayout;
 

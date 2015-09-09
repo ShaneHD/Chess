@@ -368,6 +368,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import ga.shane.chess.multiplayer.gui.BoardSpace;
 import ga.shane.utilities.EMath;
 import ga.shane.utilities.FileUtils;
 import ga.shane.utilities.ImageUtils;

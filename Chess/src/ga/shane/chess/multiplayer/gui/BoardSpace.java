@@ -362,8 +362,11 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
       With Secondary Licenses", as defined by
       the Mozilla Public License, v. 2.0.
  */
-package ga.shane.chess;
+package ga.shane.chess.multiplayer.gui;
 
+import ga.shane.chess.Piece;
+import ga.shane.chess.Player;
+import ga.shane.chess.Side;
 import ga.shane.chess.gui.Board;
 
 import java.awt.Color;
