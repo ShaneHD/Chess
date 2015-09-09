@@ -365,6 +365,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 package ga.shane.chess.multiplayer;
 
 import ga.shane.chess.MoveTrain;
+import ga.shane.chess.Side;
 import ga.shane.chess.gui.BoardSpace;
 
 public class Player extends ga.shane.chess.Player {
@@ -372,6 +373,7 @@ public class Player extends ga.shane.chess.Player {
 	protected void onMove(BoardSpace from, BoardSpace to) {
 		try {
 			Net.instance.write("move", "" + from.x, "" + from.y, "" + to.x, "" + to.y);
+			Net.instance.write("updatetimer", Side.turn.toString(), Side.turn.timer.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

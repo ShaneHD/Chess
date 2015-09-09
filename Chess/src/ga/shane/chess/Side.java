@@ -367,6 +367,7 @@ package ga.shane.chess;
 import java.util.ArrayList;
 
 import ga.shane.utilities.BRandom;
+import ga.shane.utilities.gui.JTimer;
 
 
 /** 
@@ -379,8 +380,19 @@ public enum Side {
 	public static Side only = null;
 	public static Side turn = new BRandom().nextBoolean() ? GOLD : SILVER;
 	
+	public final JTimer timer = new JTimer();
+	
 	public final int spritesheetY;
 	public final ArrayList<Piece> taken = new ArrayList<Piece>();
+	
+	static {
+		for(Side side : Side.values()) {
+			if(side.turn != side)
+				side.timer.setPaused(true);
+			
+			side.timer.start();
+		}
+	}
 	
 	Side(int spritesheetY) {
 		this.spritesheetY = spritesheetY;

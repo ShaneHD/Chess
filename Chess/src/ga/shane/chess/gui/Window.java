@@ -371,6 +371,7 @@ import ga.shane.chess.multiplayer.gui.Board;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /** 
  * @author http://www.shane.ga
@@ -391,11 +392,20 @@ public class Window extends JFrame {
 		updateTitle(Side.turn);
 		
 		BoardSpace.player = player;
-		add(new TakenPieces(Side.GOLD), BorderLayout.NORTH);
+		
+		JPanel north = new JPanel();
+		north.setLayout(new BorderLayout());
+		north.add(Side.GOLD.timer, BorderLayout.WEST);
+		north.add(new TakenPieces(Side.GOLD));
+		add(north, BorderLayout.NORTH);
 		
 		add(this.board = board, BorderLayout.CENTER);
 		
-		add(new TakenPieces(Side.SILVER), BorderLayout.SOUTH);
+		JPanel south = new JPanel();
+		south.setLayout(new BorderLayout());
+		south.add(Side.SILVER.timer, BorderLayout.WEST);
+		south.add(new TakenPieces(Side.SILVER));
+		add(south, BorderLayout.SOUTH);
 		
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
