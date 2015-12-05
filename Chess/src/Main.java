@@ -1,6 +1,6 @@
 
 
-import ga.shane.chess.gui.Window;
+import com.github.shanehd.chess.gui.Window;
 
 /** 
  * @author https://www.github.com/ShaneHD
