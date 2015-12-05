@@ -4,6 +4,9 @@ import ga.shane.chess.Side;
 import ga.shane.utilities.net.Command;
 import ga.shane.utilities.net.NetworkHelper;
 
+/** 
+ * @author https://www.github.com/ShaneHD
+ */
 public class CmdUpdateTimer implements Command {
 
 	@Override
